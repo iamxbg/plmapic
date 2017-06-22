@@ -1,0 +1,7 @@
+CREATE TABLE `sys_amdin_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(20) NOT NULL,
+  `pwd` varchar(200) NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

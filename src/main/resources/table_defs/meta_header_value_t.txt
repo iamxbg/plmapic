@@ -1,0 +1,7 @@
+CREATE TABLE `meta_header_value_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `header_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `header_id` (`header_id`),
+  CONSTRAINT `meta_header_value_t_ibfk_1` FOREIGN KEY (`header_id`) REFERENCES `meta_header_key_t` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='header值的元數據表，由developer編輯';

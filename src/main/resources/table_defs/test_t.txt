@@ -1,0 +1,11 @@
+CREATE TABLE `test_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `desc` varchar(200) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT '請求路徑',
+  `query_url` varchar(200) DEFAULT NULL COMMENT '請求參數',
+  `request_method` varchar(10) NOT NULL DEFAULT 'GET' COMMENT '請求方法',
+  `project_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `project_id` (`project_id`),
+  CONSTRAINT `test_t_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `project_t` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='測試的url';

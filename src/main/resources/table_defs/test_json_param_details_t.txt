@@ -1,0 +1,15 @@
+CREATE TABLE `test_json_param_details_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(200) NOT NULL COMMENT '鍵的名稱',
+  `value_type` char(1) NOT NULL DEFAULT '_' COMMENT ' _ 對應值，[對應 , {對應元素',
+  `data_type_id` int(11) NOT NULL COMMENT '只有value_type是_時有效，外鍵meta_data_type_regexp_t',
+  `json_model_id` int(11) NOT NULL COMMENT 'json_model的id,外鍵 request_url_template_json_model_t',
+  `level` int(11) NOT NULL DEFAULT '0' COMMENT '層數，方便程式分析?',
+  `index` int(11) NOT NULL DEFAULT '0' COMMENT '數據在組中的排序',
+  `super_id` int(11) DEFAULT NULL COMMENT '上層元素的id',
+  PRIMARY KEY (`id`),
+  KEY `json_model_id` (`json_model_id`),
+  KEY `data_type_id` (`data_type_id`),
+  CONSTRAINT `test_json_param_details_t_ibfk_1` FOREIGN KEY (`json_model_id`) REFERENCES `test_json_param_t` (`id`),
+  CONSTRAINT `test_json_param_details_t_ibfk_2` FOREIGN KEY (`data_type_id`) REFERENCES `meta_data_type_t` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='JSON請求數據結果的細節';

@@ -1,0 +1,7 @@
+CREATE TABLE `meta_header_key_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(200) NOT NULL COMMENT '鍵的名稱',
+  `of_request` int(1) NOT NULL COMMENT '是否屬於request的header',
+  `of_response` int(1) NOT NULL COMMENT '是否屬於response的header',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='header的元數據表，應該由developer進行編輯';

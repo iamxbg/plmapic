@@ -1,0 +1,6 @@
+CREATE TABLE `sys_module_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) NOT NULL,
+  `req_url` varchar(200) NOT NULL COMMENT '請求的地址',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系統的組件，現在暫時只作為導航用';

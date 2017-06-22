@@ -1,0 +1,8 @@
+CREATE TABLE `test_json_param_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `test_id` int(11) NOT NULL COMMENT '請求req_url的id',
+  `desc` varchar(200) NOT NULL COMMENT '描述，不為空',
+  PRIMARY KEY (`id`),
+  KEY `test_id` (`test_id`),
+  CONSTRAINT `test_json_param_t_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test_t` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='JSON請求的正則模型，作為req_url和json_model_details的鏈結';

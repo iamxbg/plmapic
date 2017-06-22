@@ -1,0 +1,12 @@
+CREATE TABLE `test_header_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_custom` int(1) DEFAULT '0',
+  `meta_header_val_id` int(11) DEFAULT NULL,
+  `key` varchar(200) NOT NULL,
+  `val` varchar(200) NOT NULL,
+  `test_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `test_id` (`test_id`),
+  KEY `meta_header_val_id` (`meta_header_val_id`),
+  CONSTRAINT `test_header_t_ibfk_1` FOREIGN KEY (`test_id`) REFERENCES `test_t` (`id`),
+  CONSTRAINT `test_header_t_ibfk_2` FOREIGN KEY (`meta_header_val_id`) REFERENCES `meta_header_value_t` (`id`)

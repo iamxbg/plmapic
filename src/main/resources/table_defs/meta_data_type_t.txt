@@ -1,0 +1,6 @@
+CREATE TABLE `meta_data_type_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `regexp` varchar(200) NOT NULL COMMENT '數據結構的正則，由developer編寫',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='各種數據結構的正則表達式';
